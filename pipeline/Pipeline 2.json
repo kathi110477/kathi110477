@@ -3,16 +3,12 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Pipeline 1",
-				"type": "ExecutePipeline",
+				"name": "Wait1",
+				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
-					"pipeline": {
-						"referenceName": "Pipeline 1",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
+					"waitTimeInSeconds": 1
 				}
 			}
 		],
