@@ -1,6 +1,21 @@
 {
 	"name": "Pipeline 2",
 	"properties": {
+		"activities": [
+			{
+				"name": "Pipeline 1",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Pipeline 1",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
 		"annotations": []
 	}
 }
