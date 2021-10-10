@@ -1,0 +1,17 @@
+{
+	"name": "demo sql",
+	"properties": {
+		"content": {
+			"query": "SELECT\nYear,\nsum(cast(year as int))\nFROM\nOPENROWSET(\nBULK 'https://adlsdatalakesynp.dfs.core.windows.net/development/Source/annual-enterprise-survey.csv',\n\tFORMAT='CSV',\n\tHEADER_ROW= true,\n\tPARSER_VERSION='2.0'\n) WITH ( YEAR VARCHAR(10)) as rows\ngroup by CAST(year as INT)",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
